@@ -1,12 +1,6 @@
 node {
         
-        checkout([
-                    $class: 'GitSCM',
-                    branches: scm.branches,
-                    doGenerateSubmoduleConfigurations: false,
-                    extensions: scm.extensions + [[$class: 'SubmoduleOption', disableSubmodules: false, recursiveSubmodules: true, reference: '', trackingSubmodules: false]],
-                    submoduleCfg: [],
-                    userRemoteConfigs: scm.userRemoteConfigs])
+        checkout scm trackingSubmodules: true
 
     
         stage('Build') {
