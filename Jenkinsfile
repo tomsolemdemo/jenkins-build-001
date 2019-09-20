@@ -2,11 +2,18 @@ node {
         
         checkout scm recursiveSubmodules
 
-        stages {
-                stage('Stage 1') {
-                    steps {
-                        echo 'Hello world!' 
-                    }
-                }
-            }
+    
+        stage('Build') {
+            echo 'Building....' 
+        }
+        stage('Test'){
+            echo 'Testing....'
+        }
+        stage('Deploy dev'){
+            echo 'Deploy dev'
+        }
+        stage('Deploy prod'){
+            echo 'Deploy prod'
+        }
+    
 }
