@@ -1,6 +1,4 @@
-pipeline {
-    agent any 
-    node {
+node {
         
         checkout scm recursiveSubmodules
 
@@ -11,6 +9,4 @@ pipeline {
                     }
                 }
             }
-    }
-    
 }
