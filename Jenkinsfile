@@ -1,10 +1,22 @@
 node {
         
-        checkout scm trackingSubmodules=true
+        checkout scm: [
+                        $class: 'GitSCM',
+                        branches: scm.branches,
+                        doGenerateSubmoduleConfigurations: false,
+                        extensions: [[$class: 'SubmoduleOption',
+                                      disableSubmodules: false,
+                                      parentCredentials: false,
+                                      recursiveSubmodules: true,
+                                      reference: '',
+                                      trackingSubmodules: false]],
+                        submoduleCfg: [],
+                        userRemoteConfigs: scm.userRemoteConfigs
+                ]
 
     
         stage('Build') {
-            echo 'Building using trackingSubmodules' 
+            echo 'Building scm array' 
             sh "ls -R"
         }
         stage('Test'){
