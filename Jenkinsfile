@@ -4,7 +4,7 @@ node {
 
     
         stage('Build') {
-            echo 'Building using -recursive 
+            echo 'Building using -recursive' 
             sh "ls -R"
         }
         stage('Test'){
