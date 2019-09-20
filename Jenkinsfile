@@ -1,10 +1,10 @@
 node {
         
-        checkout scm recursiveSubmodules
+        checkout scm -recursive
 
     
         stage('Build') {
-            echo 'Building....' 
+            echo 'Building using -recursive 
             sh "ls -R"
         }
         stage('Test'){
