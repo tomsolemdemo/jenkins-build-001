@@ -5,7 +5,7 @@ node {
     
         stage('Build') {
             echo 'Building....' 
-            def files = findFiles(glob: '**/TEST-*.xml') echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
+            sh "ls -R"
         }
         stage('Test'){
             echo 'Testing....'
