@@ -1,6 +1,6 @@
 node {
         
-        checkout scm trackingSubmodules: true
+        checkout scm trackingSubmodules=true
 
     
         stage('Build') {
